@@ -742,16 +742,18 @@ ul, ol {
 .team-tab {
   position: relative;
   bottom: -.08rem;
-  padding: 0 .2rem;
+  padding: 0 .4rem;
   @include flexbox();
   li {
     @include flex(1);
+    text-align: center;
     a {
+      white-space: nowrap;
       margin: 0 auto;
-      display: block;
-      width: 1.36rem;
+      display: inline-block;
+      min-width: 1.36rem;
       height: .45rem;
-      padding-top: .1rem;
+      padding: .1rem .3rem;
       text-align: center;
       background: url(../images/team-tab.png) center no-repeat;
       @include background-size(100% 100%);
@@ -1204,7 +1206,7 @@ ul, ol {
         background-color: #9288fb;
       }
     }
-    small{
+    small {
       margin-left: .3rem;
       color: #bd6918;
       font-size: .16rem;
@@ -1246,10 +1248,88 @@ ul, ol {
   }
 }
 
-.task-out-wrap{
+.task-out-wrap {
   padding: .3rem 0;
 }
 
+.gk-wrap {
+  margin: .08rem .4rem .2rem;
+  background-color: #fbde90;
+  padding: .3rem .2rem;
+  @include border-radius(.1rem);
+  @include box-shadow(1px 1px 2px #aaa487);
+}
+
+.gk-wrap {
+  .gk-box {
+    padding: .2rem 0;
+    color: #bd6918;
+    font-size: .2rem;
+    & + .gk-box {
+      border-top: 1px dashed #d29040;
+    }
+    .gk-group{
+      padding: .02rem 0;
+      @include flexbox();
+      @include flex-wrap(wrap);
+      .gk-item{
+        @include flex(1);
+        i{
+          font-size: inherit;
+        }
+      }
+      span{
+        margin: 0 .1rem;
+      }
+    }
+  }
+  .img-box{
+    display: block;
+    margin-bottom: .1rem;
+    height: 1.86rem;
+    background-position: center;
+    @include background-size(cover);
+    @include border-radius(.1rem);
+    @include box-shadow(1px 1px 2px #aaa487);
+  }
+}
 
 
-
+.video-list{
+  padding: .2rem .3rem;
+  li{
+    &+li{
+      margin-top: .14rem;
+    }
+    .video-link{
+      overflow: hidden;
+      display: block;
+      color: #bd6918;
+      @include border-radius(.1rem);
+      @include box-shadow(1px 1px 2px #aaa487);
+      background-color: #fbde90;
+    }
+    .video-img{
+      height: 3rem;
+      background-position: center;
+      @include background-size(cover);
+    }
+    dl{
+      padding: .1rem .2rem;
+      dt{
+        font-size: .2rem;
+      }
+      dd{
+        span{
+          font-size: .16rem;
+          &+span{
+            margin-left: .1rem;
+          }
+          i{
+            font-size: inherit;
+          }
+        }
+      }
+    }
+  }
+}
